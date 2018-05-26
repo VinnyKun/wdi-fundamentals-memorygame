@@ -2,7 +2,29 @@ console.log("Up and running!");
 console.log("how bow now");
 
 // global arrays
-var cards = ["queen", "queen", "king", "king"];
+var cards = [
+{
+	rank: "Queen",
+	suit: "hearts",
+	cardImage: "images/queen-of-hearts.png",
+},
+{
+	rank: "Queen",
+	suit: "diamonds",
+	cardImage: "images/queen-of-diamonds.png",
+},
+{
+	rank: "King",
+	suit: "hearts",
+	cardImage: "images/King-of-hearts.png",
+},
+{
+	rank: "King",
+	suit: "diamonds",
+	cardImage: "images/King-of-diamonds.png",
+}
+
+];
 
 var cardsInPlay = [];
 
@@ -18,13 +40,23 @@ var checkForMatch = function(){
 // game logic function
 var flipCard = function (cardId) {
 
-console.log("user flipped " + cards[cardId]);
-cardsInPlay.push(cards[cardId]);
+console.log("user flipped " + cards[cardId].rank);
+cardsInPlay.push(cards[cardId].rank);
+console.log(cards[cardId].cardImage)
+console.log(cards[cardId].suit)
+
 
 if (cardsInPlay.length === 2) {
 	checkForMatch();
 }
+
 };
 
 flipCard(0);
 flipCard(2);
+
+
+
+
+
+
